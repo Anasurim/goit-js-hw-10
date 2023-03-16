@@ -22,3 +22,5 @@ refs.input.addEventListener('input', e => {
 });
 
 function fetchCountries() {}
+function renderMarkup() {}
+function onInput() {}
