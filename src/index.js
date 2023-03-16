@@ -27,23 +27,28 @@ function renderMarkupUl(countries) {
 function renderMarkupInfo(countries) {
   const markUp = countries
     .map(country => {
+      const languageObjs = Object.values(country.languages);
+
       return `<img src="${country.flags.svg}" alt="country flag" width="30px" />
                 <h2>${country.name.official}</h2>
                 <ul class="country-info__list">
                     <li>
-                        <span class="country-info__name">Capital: ${country.capital}</span>
+                        <span class="country-info__name">Capital:</span>
+                        ${country.capital}
                     </li>
                     <li>
-                        <span class="country-info__name">Population: ${country.population}</span>
+                        <span class="country-info__name">Population:</span>
+                        ${country.population}
                     </li>
                     <li>
-                        <span class="country-info__name">Languages: ${country.languages}</span>
+                        <span class="country-info__name">Languages:</span>
+                        ${languageObjs}
                     </li>
                 </ul>`;
     })
     .join('');
-
-  refs.countryList.innerHTML = markUp;
+  refs.countryList.innerHTML = '';
+  refs.countryInfo.innerHTML = markUp;
 }
 
 function onInput(e) {
