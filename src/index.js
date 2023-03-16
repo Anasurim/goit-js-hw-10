@@ -1,4 +1,6 @@
 import './css/styles.css';
+import fetchCountries from './js/fetchCountries';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -9,18 +11,8 @@ const refs = {
 refs.input.addEventListener('input', e => {
   const countryName = e.currentTarget.value;
 
-  fetch(`https://restcountries.com/v3.1/name/${countryName}`)
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+  fetchCountries(countryName);
 });
 
-function fetchCountries() {}
 function renderMarkup() {}
 function onInput() {}
