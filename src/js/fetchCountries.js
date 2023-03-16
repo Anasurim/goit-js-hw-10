@@ -5,5 +5,10 @@ export default function fetchCountries(countryName) {
 
   return fetch(
     `https://restcountries.com/v3.1/name/${countryName}?fields=${countryParameters}`
-  ).then(response => response.json());
+  ).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
 }
