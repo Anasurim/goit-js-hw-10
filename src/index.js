@@ -14,5 +14,7 @@ refs.input.addEventListener('input', e => {
   fetchCountries(countryName);
 });
 
-function renderMarkup() {}
+function renderMarkup() {
+  let markUp;
+}
 function onInput() {}
