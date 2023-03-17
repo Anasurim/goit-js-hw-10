@@ -34,3 +34,20 @@ body {
   font-weight: bold;
   margin: 0;
 }
+
+.country-info__name {
+  font-weight: bold;
+}
+
+.country-info__list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.country-info__list li {
+  margin-bottom: 10px;
+}
+
+.country-info__value {
+  margin-left: 10px;
+}
