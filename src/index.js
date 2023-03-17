@@ -21,6 +21,7 @@ function renderMarkupUl(countries) {
     })
     .join('');
 
+  refs.countryInfo.innerHTML = '';
   refs.countryList.innerHTML = markUp;
 }
 
@@ -79,6 +80,8 @@ function onInput(e) {
     })
     .catch(error => {
       console.error(error);
+      refs.countryList.innerHTML = '';
+      refs.countryInfo.innerHTML = '';
     });
 }
 
